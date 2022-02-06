@@ -1,0 +1,74 @@
+body {
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+    
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+#molecule-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#formula-container {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+}
+#formula-container > label, input, button {
+    margin: 6px 8px;
+    padding: 6px 4px;
+}
+#formula-container > input, button {
+    font-size: smaller;
+    border: 3px solid #4c5554;
+    border-radius: 10px;
+    box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+    transition: 0.25s;
+}
+#formula-container > input {
+    flex-grow: 1;
+    outline: none;
+}
+#formula-container[valid=false] > input {
+    color: red;
+    background-color: #ffe2e2;
+}
+#formula-container > button:hover {
+    background-color: #ddd;
+}
+#formula-container > button:active {
+    background-color: #ccc;
+}
+
+#error-message {
+    margin-top: 4em;
+    font-style: italic;
+    font-size: large;
+    color: red;
+    opacity: 1;
+    transition: opacity 0.1s;
+}
+#error-message.hidden {
+    opacity: 0;
+}
+
+@media (max-width: 620px) {
+    #formula-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #error-message {
+        margin-top: 10em;
+    }    
+}
