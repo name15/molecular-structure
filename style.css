@@ -9,32 +9,34 @@ body {
     user-select: none; /* Standard */
 }
 
-#molecule-container {
+molecular-structure {
     position: absolute;
-    top: 0;
-    left: 0;
+    left: 12px;
+    top: 6em;
+    right: 12px;
+    bottom: 0;
     z-index: -1;
 }
 
 #formula-container {
     position: absolute;
-    top: 10px;
+    top: 0;
     left: 0;
     right: 0;
-    font-size: x-large;
+    margin: 16px 12px;
+    font-size: xx-large;
     display: flex;
     align-items: center;
 }
 #formula-container > label, input, button {
-    margin: 6px 8px;
-    padding: 6px 4px;
+    margin: inherit;
+    padding: 10px 8px;
 }
 #formula-container > input, button {
     font-size: smaller;
     border: 3px solid #4c5554;
     border-radius: 10px;
     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
-    transition: 0.25s;
 }
 #formula-container > input {
     flex-grow: 1;
@@ -51,24 +53,18 @@ body {
     background-color: #ccc;
 }
 
-#error-message {
-    margin-top: 4em;
-    font-style: italic;
-    font-size: large;
-    color: red;
-    opacity: 1;
-    transition: opacity 0.1s;
-}
-#error-message.hidden {
-    opacity: 0;
+#error {
+    background-color: red;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 960px) {
     #formula-container {
+        font-size: x-large;
+        margin: 8px 6px;
         flex-direction: column;
         align-items: stretch;
     }
-    #error-message {
-        margin-top: 10em;
+    molecular-structure {
+        top: 12em;
     }    
 }
