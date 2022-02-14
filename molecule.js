@@ -259,14 +259,16 @@ Molecule.parseFormula = (string) => {
 
     if (bracketLevel != 0)
         throw `Missing ${bracketLevel < 0 ? "opening" : "closing"} bracket(s).`;
-
+        
     return result;
 };
 
 Molecule.prototype.createGraph = function (molecularFormula) {
     let atoms = Molecule.parseFormula(molecularFormula);
-    console.log(atoms);
-
+    
+    if (result.length > 150)
+        throw `The simulation cannot handle that many atoms.`;
+    
     // Randomize vertices
     let vertices = atoms.map((atomicNumber) => {
         let coords = {
