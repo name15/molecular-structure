@@ -266,7 +266,7 @@ Molecule.parseFormula = (string) => {
 Molecule.prototype.createGraph = function (molecularFormula) {
     let atoms = Molecule.parseFormula(molecularFormula);
     
-    if (result.length > 150)
+    if (atoms.length > 150)
         throw `The simulation cannot handle that many atoms.`;
     
     // Randomize vertices
